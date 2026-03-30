@@ -4,7 +4,7 @@ USE AOBD_project;
 
 CREATE TABLE PricePaidData2024 (
     TransactionUniqueIdentifier VARCHAR(50) NOT NULL,
-    Price INT NULL,
+    Price BIGINT NULL,
     DateOfTransfer SMALLDATETIME NULL,
     Postcode VARCHAR(8) NULL,
     PropertyType CHAR(1) NULL,
@@ -26,7 +26,7 @@ CREATE TABLE PricePaidData2024 (
 
 CREATE TABLE PricePaidData2025 (
     TransactionUniqueIdentifier VARCHAR(50) NOT NULL,
-    Price INT NULL,
+    Price BIGINT NULL,
     DateOfTransfer SMALLDATETIME NULL,
     Postcode VARCHAR(8) NULL,
     PropertyType CHAR(1) NULL,
