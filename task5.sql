@@ -34,4 +34,5 @@ FROM (
     )
 ) t
 GROUP BY county
-ORDER BY county;
+ORDER BY county
+OPTION(MAXDOP 1); 

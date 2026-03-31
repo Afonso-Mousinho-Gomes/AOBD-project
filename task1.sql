@@ -46,8 +46,6 @@ CREATE TABLE PricePaidData2025 (
     PRIMARY KEY (TransactionUniqueIdentifier)
 );
 
-DROP TABLE IF EXISTS PricePaidData2025;
-DROP TABLE IF EXISTS PricePaidData2024;
 
 
 BULK INSERT PricePaidData2025
@@ -80,9 +78,14 @@ SELECT
 INTO ShortPricePaidData2025
 FROM PricePaidData2025;
 
-DROP TABLE IF EXISTS ShortPricePaidData2025;
-DROP TABLE IF EXISTS ShortPricePaidData2024;
 
 
 SELECT COUNT(*) FROM ShortPricePaidData2025;
 SELECT COUNT(*) FROM ShortPricePaidData2024;
+
+
+DROP TABLE IF EXISTS PricePaidData2025;
+DROP TABLE IF EXISTS PricePaidData2024;
+
+DROP TABLE IF EXISTS ShortPricePaidData2025;
+DROP TABLE IF EXISTS ShortPricePaidData2024;

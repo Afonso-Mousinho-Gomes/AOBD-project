@@ -24,8 +24,8 @@ INCLUDE(price, locality, old_new);
 
 --0.464414
 CREATE INDEX idx_oldnew
-ON ShortPricePaidData2025(town)
-INCLUDE(price, locality, old_new);
+ON ShortPricePaidData2025(old_new)
+INCLUDE(price, locality, town);
 
 DROP INDEX idx_town_oldnew_locality ON ShortPricePaidData2025;
 DROP INDEX idx_town_oldnew ON ShortPricePaidData2025;
