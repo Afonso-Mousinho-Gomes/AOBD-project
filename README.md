@@ -61,12 +61,12 @@ Two datasets were used:
 
 ## 📂 Repository Structure
 
-- [Task 1](./Task1)
-- [Task 2](./Task2)
-- [Task 3](./Task3)
-- [Task 4](./Task4)
-- [Task 5](./Task5)
-- [Task 6](./Task6)
+- [Task 1](./task1.sql)
+- [Task 2](./task2.sql)
+- [Task 3](./task3.sql)
+- [Task 4](./task4.sql)
+- [Task 5](./task5.sql)
+- [Task 6](./task6.sql)
 - [Report](./report)
 - [README](./README.md)
 
