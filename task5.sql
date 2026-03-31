@@ -37,7 +37,7 @@ WHERE EXISTS (
 GROUP BY p24.county
 ORDER BY county;
 
---94
+--84
 SELECT county, COUNT(*) AS properties_sold_both_years
 FROM (
     SELECT DISTINCT p24.county, p24.paon, p24.street, p24.town
@@ -55,7 +55,7 @@ GROUP BY county
 ORDER BY county;
 
 
---61???
+--56???
 SELECT p24.county, COUNT(DISTINCT 
     CONCAT(p24.paon, '|', p24.street, '|', p24.town)
 ) AS properties_sold_both_years
@@ -89,7 +89,7 @@ FROM (
 ) t
 GROUP BY county;
 
---61
+--108
 SELECT county, COUNT(*) AS properties_sold_both_years
 FROM (
     SELECT county, PAON, street, Town
