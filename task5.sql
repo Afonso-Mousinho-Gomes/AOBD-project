@@ -1,4 +1,4 @@
--- ORIGINAL QUERY
+-- ORIGINAL QUERY 105
 WITH p24 AS ( 
 	SELECT DISTINCT county, PAON, street, town 
 	FROM ShortPricePaidData2024 
@@ -19,25 +19,7 @@ OPTION(MAXDOP 1);
 
 -- QUERY REWRITING
 
---105
-SELECT p24.county, COUNT(*) AS properties_sold_both_years
-FROM (
-    SELECT county, paon, street, town
-    FROM ShortPricePaidData2024
-    GROUP BY county, paon, street, town
-) p24
-WHERE EXISTS (
-    SELECT 1
-    FROM ShortPricePaidData2025 p25
-    WHERE p25.county = p24.county
-      AND p25.paon = p24.paon
-      AND p25.street = p24.street
-      AND p25.town = p24.town
-)
-GROUP BY p24.county
-ORDER BY county;
-
---84
+--88
 SELECT county, COUNT(*) AS properties_sold_both_years
 FROM (
     SELECT DISTINCT p24.county, p24.paon, p24.street, p24.town
@@ -53,61 +35,3 @@ FROM (
 ) t
 GROUP BY county
 ORDER BY county;
-
-
---56???
-SELECT p24.county, COUNT(DISTINCT 
-    CONCAT(p24.paon, '|', p24.street, '|', p24.town)
-) AS properties_sold_both_years
-FROM ShortPricePaidData2024 p24
-WHERE EXISTS (
-    SELECT 1
-    FROM ShortPricePaidData2025 p25
-    WHERE p25.county = p24.county
-      AND p25.paon = p24.paon
-      AND p25.street = p24.street
-      AND p25.town = p24.town
-)
-GROUP BY p24.county
-ORDER BY county;
-
-
---101
-SELECT county, COUNT(*) 
-FROM (
-    SELECT p24.county, p24.paon, p24.street, p24.town
-    FROM ShortPricePaidData2024 p24
-    WHERE EXISTS (
-        SELECT 1
-        FROM ShortPricePaidData2025 p25
-        WHERE p25.county = p24.county
-          AND p25.paon = p24.paon
-          AND p25.street = p24.street
-          AND p25.town = p24.town
-    )
-    GROUP BY p24.county, p24.paon, p24.street, p24.town
-) t
-GROUP BY county;
-
---108
-SELECT county, COUNT(*) AS properties_sold_both_years
-FROM (
-    SELECT county, PAON, street, Town
-    FROM ShortPricePaidData2024
-    WHERE county IS NOT NULL 
-      AND PAON IS NOT NULL 
-      AND street IS NOT NULL 
-      AND Town IS NOT NULL
-
-    INTERSECT
-
-    SELECT county, PAON, street, Town
-    FROM ShortPricePaidData2025
-    WHERE county IS NOT NULL 
-      AND PAON IS NOT NULL 
-      AND street IS NOT NULL 
-      AND Town IS NOT NULL
-) AS common_properties
-GROUP BY county
-ORDER BY county;
-
