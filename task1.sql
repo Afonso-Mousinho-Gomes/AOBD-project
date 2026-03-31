@@ -20,7 +20,7 @@ CREATE TABLE PricePaidData2024 (
     PPDCategoryType CHAR(1) NULL,
     RecordStatus VARCHAR(5) NULL,
 
-	CONSTRAINT PK_PricePaidData2025 
+	CONSTRAINT PK_PricePaidData2024 
     PRIMARY KEY (TransactionUniqueIdentifier)
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE PricePaidData2025 (
     PPDCategoryType CHAR(1) NULL,
     RecordStatus VARCHAR(5) NULL,
 
-	CONSTRAINT PK_PricePaidData2025v2
+	CONSTRAINT PK_PricePaidData2025
     PRIMARY KEY (TransactionUniqueIdentifier)
 );
 
@@ -57,7 +57,6 @@ WITH (
     FIRSTROW = 1,
     FIELDQUOTE = '"',
     ROWTERMINATOR = '0x0a',
-    CODEPAGE = '65001',
     TABLOCK
 );
 
@@ -67,8 +66,7 @@ WITH (
     FORMAT = 'CSV',
     FIRSTROW = 1,
     FIELDQUOTE = '"',
-    ROWTERMINATOR = '0x0a',
-    CODEPAGE = '65001',
+	ROWTERMINATOR = '0x0a',
     TABLOCK
 );
 
