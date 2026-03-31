@@ -60,14 +60,15 @@ Two datasets were used:
 ---
 
 ## 📂 Repository Structure
-├── Task1/
-├── Task2/
-├── Task3/
-├── Task4/
-├── Task5/
-├── Task6/
-├── report/
-└── README.md
+
+- [Task 1](./Task1)
+- [Task 2](./Task2)
+- [Task 3](./Task3)
+- [Task 4](./Task4)
+- [Task 5](./Task5)
+- [Task 6](./Task6)
+- [Report](./report)
+- [README](./README.md)
 
 Each folder contains the SQL scripts and relevant materials for the corresponding task.
 
@@ -140,9 +141,3 @@ Each folder contains the SQL scripts and relevant materials for the correspondin
 - Afonso Gomes  
 - Tiago Videira  
 
----
-
-## 📎 Notes
-
-This project was developed for academic purposes.  
-Some parts of the report were supported by AI tools.
