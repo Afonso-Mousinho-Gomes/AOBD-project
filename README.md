@@ -67,7 +67,7 @@ Two datasets were used:
 - [Task 4](./task4.sql)
 - [Task 5](./task5.sql)
 - [Task 6](./task6.sql)
-- [Report](./report)
+- [Report](./Report.pdf)
 - [README](./README.md)
 
 Each folder contains the SQL scripts and relevant materials for the corresponding task.
